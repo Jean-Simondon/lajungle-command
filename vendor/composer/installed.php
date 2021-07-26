@@ -5,7 +5,7 @@
         'type' => 'wp-cli-package',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'f7d8f96d2a2931185f0316b164b75a07e7cef339',
+        'reference' => 'fe5485866fd9536dafdb7d1907c00ea539e444c1',
         'name' => 'jean-simondon/lajungle-command',
         'dev' => true,
     ),
@@ -25,7 +25,7 @@
             'type' => 'wp-cli-package',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'f7d8f96d2a2931185f0316b164b75a07e7cef339',
+            'reference' => 'fe5485866fd9536dafdb7d1907c00ea539e444c1',
             'dev_requirement' => false,
         ),
         'php-school/cli-menu' => array(
