@@ -15,7 +15,15 @@
     ],
     "minimum-stability": "dev",
     "licence": "MIT",
+    "autoload": {
+        "files": [ "command.php" ]
+    },
     "require": {
         "php-school/cli-menu": "dev-master"
+    },
+    "extras": {
+        "commands": [
+            "run_forest"
+        ]
     }
 }
