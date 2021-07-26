@@ -17,5 +17,8 @@
     "licence": "MIT",
     "require": {
         "php-school/cli-menu": "dev-master"
+    },
+    "autoload": {
+        "files" :["./index-for-wp-cli"]
     }
 }
