@@ -1,7 +1,7 @@
 <?php
 
-WP_CLI::add_command("start-jungle", "run_forest");
+WP_CLI::add_command("start-jungle", "start_jungle");
 
 function start_jungle() {
-    exec("./index");
+    exec("./index-for-wp-cli");
 }
