@@ -2,11 +2,6 @@
 
 namespace Init;
 
-// define( 'ROOT_PATH', realpath('.'));
-
-// var_dump(ROOT_PATH);
-// die();
-
 require_once __DIR__ . '/config/requirement.php';
 require_once __DIR__ . '/config/constant.php';
 require_once __DIR__ . '/config/private_constant.php';
