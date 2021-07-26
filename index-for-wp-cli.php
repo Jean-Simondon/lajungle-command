@@ -1,3 +1,4 @@
+#!/usr/bin/php -d display_errors=1
 <?php
 
 namespace Init;
