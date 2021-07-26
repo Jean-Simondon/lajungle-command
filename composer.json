@@ -19,6 +19,6 @@
         "php-school/cli-menu": "dev-master"
     },
     "autoload": {
-        "files" : [ "./index-for-cli" ]
+        "files" : [ "./index-for-cli.php" ]
     }
 }
