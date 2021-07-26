@@ -1,0 +1,52 @@
+<?php return array(
+    'root' => array(
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'type' => 'wp-cli-package',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'reference' => 'f7d8f96d2a2931185f0316b164b75a07e7cef339',
+        'name' => 'jean-simondon/lajungle-command',
+        'dev' => true,
+    ),
+    'versions' => array(
+        'beberlei/assert' => array(
+            'pretty_version' => 'v3.x-dev',
+            'version' => '3.9999999.9999999.9999999-dev',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../beberlei/assert',
+            'aliases' => array(),
+            'reference' => 'd63a6943fc4fd1a2aedb65994e3548715105abcf',
+            'dev_requirement' => false,
+        ),
+        'jean-simondon/lajungle-command' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'type' => 'wp-cli-package',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => 'f7d8f96d2a2931185f0316b164b75a07e7cef339',
+            'dev_requirement' => false,
+        ),
+        'php-school/cli-menu' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../php-school/cli-menu',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'reference' => 'd5a96a5d39183b15021b470bcaaf2532660e5674',
+            'dev_requirement' => false,
+        ),
+        'php-school/terminal' => array(
+            'pretty_version' => '0.2.1',
+            'version' => '0.2.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../php-school/terminal',
+            'aliases' => array(),
+            'reference' => '725f86c7db996a4cf65648022f17e22391e97320',
+            'dev_requirement' => false,
+        ),
+    ),
+);
