@@ -1,7 +1,5 @@
 <?php
 
-namespace Init;
-
 use Menu\Menu;
 use Menu\MenuDAO;
 use PhpSchool\CliMenu\Builder\CliMenuBuilder;
