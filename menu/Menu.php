@@ -90,7 +90,7 @@ ART;
             $result = $menu->getSelectedItem()->getValue(); // getValue est bien connu malgré l'erreur déclarée
             $menu->close();
             echo "test\n";
-            // ( new Script( $result ) )->run();
+            ( new Script( $result ) )->run();
             // $menu->open();
         };
     }
