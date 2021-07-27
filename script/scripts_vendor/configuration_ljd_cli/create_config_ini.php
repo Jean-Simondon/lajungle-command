@@ -11,6 +11,7 @@ Validator::getInstance()->require([]);
  * pour toutes les constantes à créer
  */
 $project_root = str_replace( " " , "\ " , PROJECT_ROOT);
+echo $project_root . "\n";
 
 print_r("test d'output");
 
