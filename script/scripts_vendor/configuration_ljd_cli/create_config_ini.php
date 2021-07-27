@@ -3,19 +3,22 @@
 namespace Scripts;
 
 use Validator\Validator;
+// use WP_CLI;
 
-Validator::getInstance()->require([]);
+// Validator::getInstance()->require([]);
 
 /**
  * Créer un fichier de config et faire itérer dessus
  * pour toutes les constantes à créer
  */
-$project_root = str_replace( " " , "\ " , PROJECT_ROOT);
+// $project_root = str_replace( " " , "\ " , PROJECT_ROOT);
 
-WP_CLI::line($project_root . "\n");
-WP_CLI::line(WP_CLI_ROOT . "\n");
-WP_CLI::line(__DIR__ . "\n");
-WP_CLI::line("test d'output");
+WP_CLI::line("test");
+
+// WP_CLI::line($project_root . "\n");
+// WP_CLI::line(WP_CLI_ROOT . "\n");
+// WP_CLI::line(__DIR__ . "\n");
+// WP_CLI::line("test d'output");
 
 // $this->display("Bienvenue dans l'outils de création du fichier de configuration config.ini")
 //     ->display("Ce fichier est important afin de guider l'outils ljd-cli dans l'arborescence de votre projet")
