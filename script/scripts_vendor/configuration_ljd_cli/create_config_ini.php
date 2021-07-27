@@ -11,13 +11,11 @@ Validator::getInstance()->require([]);
  * pour toutes les constantes à créer
  */
 $project_root = str_replace( " " , "\ " , PROJECT_ROOT);
-echo $project_root . "\n";
 
-echo WP_CLI_ROOT . "\n";
-
-echo __DIR__ . "\n";
-
-print_r("test d'output");
+WP_CLI::line($project_root . "\n");
+WP_CLI::line(WP_CLI_ROOT . "\n");
+WP_CLI::line(__DIR__ . "\n");
+WP_CLI::line("test d'output");
 
 // $this->display("Bienvenue dans l'outils de création du fichier de configuration config.ini")
 //     ->display("Ce fichier est important afin de guider l'outils ljd-cli dans l'arborescence de votre projet")
