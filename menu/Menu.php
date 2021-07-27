@@ -91,7 +91,7 @@ ART;
             $menu->close();
             echo "test\n";
             ( new Script( $result ) )->run();
-            $menu->open();
+            // $menu->open();
         };
     }
 
