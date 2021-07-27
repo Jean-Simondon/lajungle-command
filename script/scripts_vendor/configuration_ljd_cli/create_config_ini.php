@@ -13,7 +13,8 @@ use Validator\Validator;
  */
 // $project_root = str_replace( " " , "\ " , PROJECT_ROOT);
 
-WP_CLI::line("test");
+WP_CLI::log("test");
+// WP_CLI::line("test");
 
 // WP_CLI::line($project_root . "\n");
 // WP_CLI::line(WP_CLI_ROOT . "\n");
