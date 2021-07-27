@@ -127,13 +127,13 @@ class Script
         if ($this->dismiss()) return $this;
         if ($variable == null) {
             if ( class_exists( 'WP_CLI' ) ) {
-                WP_CLI::line($text . "\n");
+                WP_CLI::line($text);
             } else {
                 echo $text . "\n";
             }
         } else {
             if ( class_exists( 'WP_CLI' ) ) {
-                WP_CLI::line($text . " " . $variable . "\n");
+                WP_CLI::line($text . " " . $variable);
             } else {
                 echo $text . " " . $variable . "\n";
             }

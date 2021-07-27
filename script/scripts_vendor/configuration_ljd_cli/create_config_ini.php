@@ -2,7 +2,7 @@
 
 namespace Scripts;
 
-use Validator\Validator;
+// use Validator\Validator;
 use WP_CLI;
 
 // Validator::getInstance()->require([]);

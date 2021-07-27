@@ -3,6 +3,7 @@
 namespace Menu;
 
 use Menu\MenuOption;
+use WP_CLI;
 use Scripts\Script;
 use PhpSchool\CliMenu\CliMenu;
 use PhpSchool\CliMenu\MenuItem\AsciiArtItem;
