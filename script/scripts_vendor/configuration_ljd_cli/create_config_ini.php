@@ -13,7 +13,7 @@ use WP_CLI;
  */
 $project_root = str_replace( " " , "\ " , PROJECT_ROOT);
 
-// WP_CLI::line("test dans le fichier de scripts 2\n");
+WP_CLI::line("test dans le fichier de scripts 2\n");
 
 $this->display("Bienvenue dans l'outils de création du fichier de configuration config.ini")
     ->display("Ce fichier est important afin de guider l'outils ljd-cli dans l'arborescence de votre projet")
