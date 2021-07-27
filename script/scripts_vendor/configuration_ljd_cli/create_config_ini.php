@@ -15,6 +15,8 @@ echo $project_root . "\n";
 
 echo WP_CLI_ROOT . "\n";
 
+echo __DIR__ . "\n";
+
 print_r("test d'output");
 
 // $this->display("Bienvenue dans l'outils de création du fichier de configuration config.ini")
