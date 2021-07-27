@@ -12,6 +12,9 @@ Validator::getInstance()->require([]);
  */
 $project_root = str_replace( " " , "\ " , PROJECT_ROOT);
 
+print_r("test d'output");
+var_dump($project_root);
+
 $this->display("Bienvenue dans l'outils de création du fichier de configuration config.ini")
     ->display("Ce fichier est important afin de guider l'outils ljd-cli dans l'arborescence de votre projet")
 
