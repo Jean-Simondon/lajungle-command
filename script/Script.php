@@ -31,15 +31,13 @@ class Script
     public function run()
     {
         if (file_exists(SCRIPT_DIR . '/' . $this->script_name)) {
-            // echo "test 3\n";
             try {
                 /** On échappe les espaces dans le répertoire  */
                 $project_root = str_replace( " " , "\ " , PROJECT_ROOT);
-                // var_dump(SCRIPT_DIR . '/' . $this->script_name);
                 require SCRIPT_DIR . '/' . $this->script_name;
-                // require CONFIG_DIR . '/constant.php';
-                // require CONFIG_DIR . '/private_constant.php';
-                // $this->waitForInput("\nLe script est terminé, appuyez sur une touche pour revenir au menu");
+                require CONFIG_DIR . '/constant.php';
+                require CONFIG_DIR . '/private_constant.php';
+                $this->waitForInput("\nLe script est terminé, appuyez sur une touche pour revenir au menu");
             } catch (Exception $e) {
                 echo $e->getMessage();
                 $this->waitForInput("\nLe script a été écourté, appuyez sur une touche pour revenir au menu");
@@ -60,12 +58,16 @@ class Script
     {
         if ($this->dismiss()) return $this;
 
-        $handle = fopen("php://stdin", "r");
-        do {
-            $line = trim(fgets($handle));
-        } while ($line == '');
-        fclose($handle);
-        $this->args[$key] = trim($line);
+        $this->args[$key] = trim( fgets( STDIN ) );
+
+        // $this->display($this->args[$key]);
+
+        // $handle = fopen("php://stdin", "r");
+        // do {
+        //     $line = trim(fgets($handle));
+        // } while ($line == '');
+        // fclose($handle);
+        // $this->args[$key] = trim($line);
 
         return $this;
     }
@@ -74,10 +76,11 @@ class Script
     {
         if ($this->dismiss()) return $this;
 
-        $handle = fopen("php://stdin", "r");
+        // $handle = fopen("php://stdin", "r");
 
         do {
-            $line = trim(fgets($handle));
+            // $line = trim(fgets($handle));
+            $line = trim( fgets( STDIN ) );
         } while (!in_array($line, ['y', 'Y', 'n', 'N', 'o', 'O']));
 
         if (in_array($line, ["y", "Y", "o", "O"]))
@@ -88,15 +91,16 @@ class Script
         return $this;
     }
 
-    public function askInputNumber( $question, $key_value, $storage)
+    public function askInputKeyInArray( $question, $key_value, $storage)
     {
         if ($this->dismiss()) return $this;
 
-        $handle = fopen("php://stdin", "r");
+        // $handle = fopen("php://stdin", "r");
         do {
             $this->display($question);
             $this->displayArray($key_value);
-            $line = trim(fgets($handle));
+            // $line = trim(fgets($handle));
+            $line = trim( fgets( STDIN ) );
         } while (!array_key_exists($line, $key_value));
 
         if (array_key_exists($line, $key_value)) {
@@ -125,18 +129,11 @@ class Script
     public function display($text, $variable = null)
     {
         if ($this->dismiss()) return $this;
+
         if ($variable == null) {
-            if ( class_exists( 'WP_CLI' ) ) {
-                WP_CLI::line($text);
-            } else {
-                echo $text . "\n";
-            }
+            fwrite( STDOUT, $text . "\n" );
         } else {
-            if ( class_exists( 'WP_CLI' ) ) {
-                WP_CLI::line($text . " " . $variable);
-            } else {
-                echo $text . " " . $variable . "\n";
-            }
+            fwrite( STDOUT, $text . " " . $variable . '\n' );
         }
         return $this;
     }
@@ -228,8 +225,9 @@ class Script
             $this->display("Appuyer sur une touche pour continuer");
         }
 
-        $handle = fopen("php://stdin", "r");
-        $line = trim(fgets($handle));
+        // $handle = fopen("php://stdin", "r");
+        // $line = trim(fgets($handle));
+        $line = trim( fgets( STDIN ) );
         unset($line);
         return $this;
     }
