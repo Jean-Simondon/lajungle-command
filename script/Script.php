@@ -3,6 +3,7 @@
 namespace Scripts;
 
 use Exception;
+use WP_CLI;
 
 class Script
 {
@@ -125,9 +126,17 @@ class Script
     {
         if ($this->dismiss()) return $this;
         if ($variable == null) {
-            echo $text . "\n";
+            if ( class_exists( 'WP_CLI' ) ) {
+                WP_CLI::line($text . "\n");
+            } else {
+                echo $text . "\n";
+            }
         } else {
-            echo $text . " " . $variable . "\n";
+            if ( class_exists( 'WP_CLI' ) ) {
+                WP_CLI::line($text . " " . $variable . "\n");
+            } else {
+                echo $text . " " . $variable . "\n";
+            }
         }
         return $this;
     }

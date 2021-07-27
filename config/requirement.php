@@ -6,6 +6,10 @@ if ( PHP_SAPI !== 'cli') {
     die( -1);
 }
 
+if ( ! class_exists( 'WP_CLI' ) ) {
+	return;
+}
+
 // Pas de version en dessous de 7.0.0 acceptée
 if( version_compare( PHP_VERSION, '7.0.0', '<=') ) {
     printf( "Error: LJD-CLI requires PHP %s or newer. You are running version %s.\n", '5.6.0', PHP_VERSION );

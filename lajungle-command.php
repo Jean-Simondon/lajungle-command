@@ -10,7 +10,7 @@ use PhpSchool\CliMenu\Builder\CliMenuBuilder;
 
 function run_forest() {
 
-    WP_CLI::line("test de line");
+    // WP_CLI::line("test de line");
 
     require_once __DIR__ . '/config/requirement.php';
     require_once __DIR__ . '/environnement/Env.php';
