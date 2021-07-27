@@ -1,10 +1,12 @@
 <?php
 
+if ( ! class_exists( 'WP_CLI' ) ) {
+	return;
+}
+
 use Menu\Menu;
 use Menu\MenuDAO;
 use PhpSchool\CliMenu\Builder\CliMenuBuilder;
-
-WP_CLI::add_command("run_forest", "run_forest");
 
 function run_forest() {
 
@@ -20,3 +22,6 @@ function run_forest() {
     echo "Bye bye\n";
     
 }
+
+WP_CLI::add_command("run_forest", "run_forest");
+
