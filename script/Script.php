@@ -35,8 +35,8 @@ class Script
             echo "test 3\n";
             try {
                 /** On échappe les espaces dans le répertoire  */
-                $project_root = str_replace( " " , "\ " , PROJECT_ROOT);
-                require SCRIPT_DIR . '/' . $this->script_name;
+                // $project_root = str_replace( " " , "\ " , PROJECT_ROOT);
+                // require SCRIPT_DIR . '/' . $this->script_name;
                 // require CONFIG_DIR . '/constant.php';
                 // require CONFIG_DIR . '/private_constant.php';
                 // $this->waitForInput("\nLe script est terminé, appuyez sur une touche pour revenir au menu");
