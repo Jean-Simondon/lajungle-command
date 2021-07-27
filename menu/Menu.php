@@ -88,13 +88,13 @@ ART;
     {
         $this->callback = function (CliMenu $menu) {
             print_r("test");
-            $result = $menu->getSelectedItem()->getValue(); // getValue est bien connu malgré l'erreur déclarée
+            // $result = $menu->getSelectedItem()->getValue(); // getValue est bien connu malgré l'erreur déclarée
             print_r("test 2");
-            $menu->close();
-            print_r("test 3");
-            print_r($result);
-            ( new Script( $result ) )->run();
-            $menu->open();
+            // $menu->close();
+            print_r("tests");
+            // print_r($result);
+            // ( new Script( $result ) )->run();
+            // $menu->open();
 
         };
     }
