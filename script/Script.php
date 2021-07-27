@@ -29,7 +29,10 @@ class Script
 
     public function run()
     {
+        echo "test 2\n";
+        print_r(file_exists(SCRIPT_DIR . '/' . $this->script_name));
         if (file_exists(SCRIPT_DIR . '/' . $this->script_name)) {
+            echo "test 3\n";
             try {
                 /** On échappe les espaces dans le répertoire  */
                 $project_root = str_replace( " " , "\ " , PROJECT_ROOT);

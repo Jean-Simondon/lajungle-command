@@ -91,7 +91,7 @@ ART;
             $menu->close();
             // var_dump("test");
             // print_r("test 1");
-            // echo "test 3";
+            echo "test\n";
             // var_dump($result);
             // print_r($result);
             // print_r($result);
