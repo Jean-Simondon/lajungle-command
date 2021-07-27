@@ -13,7 +13,8 @@ namespace Scripts;
  */
 // $project_root = str_replace( " " , "\ " , PROJECT_ROOT);
 
-WP_CLI::log("test");
+// WP_CLI::log("test");
+echo "test dans le fichier de scripts\n"; 
 
 // WP_CLI::line("test");
 
