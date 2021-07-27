@@ -119,4 +119,4 @@ if( file_exists( PROJECT_ROOT . '/config-for-ljd-cli.ini') ) {
 }
 
 // Débug :
-// print_r(get_defined_constants(true)["user"]);die();
+print_r(get_defined_constants(true)["user"]);die();
