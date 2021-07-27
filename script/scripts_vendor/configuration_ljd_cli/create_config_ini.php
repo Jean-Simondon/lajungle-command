@@ -16,7 +16,7 @@ namespace Scripts;
 // WP_CLI::log("test");
 echo "test dans le fichier de scripts\n"; 
 
-// WP_CLI::line("test");
+WP_CLI::line("test dans le fichier de scripts 2\n");
 
 // WP_CLI::line($project_root . "\n");
 // WP_CLI::line(WP_CLI_ROOT . "\n");
