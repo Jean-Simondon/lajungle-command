@@ -89,7 +89,6 @@ ART;
         $this->callback = function (CliMenu $menu) {
             $result = $menu->getSelectedItem()->getValue(); // getValue est bien connu malgré l'erreur déclarée
             $menu->close();
-            echo "test\n";
             ( new Script( $result ) )->run();
             // $menu->open();
         };
