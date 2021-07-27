@@ -1,10 +1,10 @@
 <?php
 
-// namespace Scripts;
+namespace Scripts;
 
-// use Validator\Validator;
+use Validator\Validator;
 
-// Validator::getInstance()->require([]);
+Validator::getInstance()->require([]);
 
 /**
  * Créer un fichier de config et faire itérer dessus
@@ -12,7 +12,7 @@
  */
 $project_root = str_replace( " " , "\ " , PROJECT_ROOT);
 
-print_r("test d'output");
+// print_r("test d'output");
 
 $this->display("Bienvenue dans l'outils de création du fichier de configuration config.ini")
     ->display("Ce fichier est important afin de guider l'outils ljd-cli dans l'arborescence de votre projet")
