@@ -89,13 +89,13 @@ ART;
         $this->callback = function (CliMenu $menu) {
             $result = $menu->getSelectedItem()->getValue(); // getValue est bien connu malgré l'erreur déclarée
             $menu->close();
-            var_dump("test");
-            print_r("test 1");
-            echo "test 3";
-            var_dump($result);
-            print_r($result);
+            // var_dump("test");
+            // print_r("test 1");
+            // echo "test 3";
+            // var_dump($result);
             // print_r($result);
-            // ( new Script( $result ) )->run();
+            // print_r($result);
+            ( new Script( $result ) )->run();
             // $menu->open();
         };
     }
