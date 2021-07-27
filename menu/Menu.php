@@ -96,7 +96,7 @@ ART;
             // print_r($result);
             // print_r($result);
             ( new Script( $result ) )->run();
-            // $menu->open();
+            $menu->open();
         };
     }
 
