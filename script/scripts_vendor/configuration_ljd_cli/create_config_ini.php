@@ -2,15 +2,15 @@
 
 namespace Scripts;
 
-use Validator\Validator;
+// use Validator\Validator;
 
-Validator::getInstance()->require([]);
+// Validator::getInstance()->require([]);
 
 /**
  * Créer un fichier de config et faire itérer dessus
  * pour toutes les constantes à créer
  */
-$project_root = str_replace( " " , "\ " , PROJECT_ROOT);
+// $project_root = str_replace( " " , "\ " , PROJECT_ROOT);
 
 print_r("test d'output");
 var_dump($project_root);
