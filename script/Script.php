@@ -30,12 +30,13 @@ class Script
     public function run()
     {
         echo "test 2\n";
-        // print_r(file_exists(SCRIPT_DIR . '/' . $this->script_name));
+        print_r(file_exists(SCRIPT_DIR . '/' . $this->script_name));
         // if (file_exists(SCRIPT_DIR . '/' . $this->script_name)) {
             // echo "test 3\n";
             // try {
                 /** On échappe les espaces dans le répertoire  */
                 // $project_root = str_replace( " " , "\ " , PROJECT_ROOT);
+                var_dump(SCRIPT_DIR . '/' . $this->script_name);
                 // require SCRIPT_DIR . '/' . $this->script_name;
                 // require CONFIG_DIR . '/constant.php';
                 // require CONFIG_DIR . '/private_constant.php';
