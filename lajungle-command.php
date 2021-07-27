@@ -22,7 +22,7 @@ function run_forest() {
     // ( new Menu( ( new MenuDAO() )->getConfigMenu(), new CliMenuBuilder()) )->getMenu()->open();
     
     // echo "Bye bye\n";
-    
+
 }
 
 WP_CLI::add_command("run_forest", "run_forest");

@@ -16,7 +16,7 @@
     "minimum-stability": "dev",
     "licence": "MIT",
     "autoload": {
-        "files": [ "command.php" ]
+        "files": [ "lajungle-command.php" ]
     },
     "require": {
         "php-school/cli-menu": "dev-master"
