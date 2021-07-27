@@ -15,7 +15,7 @@ $project_root = str_replace( " " , "\ " , PROJECT_ROOT);
 $this->display("Bienvenue dans l'outils de création du fichier de configuration config.ini")
     ->display("Ce fichier est important afin de guider l'outils ljd-cli dans l'arborescence de votre projet")
 
-    ->askInputNumber(
+    ->askInputKeyInArray(
         "Type de project ?",
         [
             '1' => 'iquitheme',
@@ -26,7 +26,7 @@ $this->display("Bienvenue dans l'outils de création du fichier de configuration
 
     ->display("Nom du theme (sans - ni _ ni majuscule")->askInputText("THEME_NAME")
 
-    ->askInputNumber(
+    ->askInputKeyInArray(
         "Version de PHP à utiliser ?",
         [
             '1' => '5.4',
