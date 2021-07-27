@@ -2,7 +2,7 @@
 
 namespace Scripts;
 
-use Validator\Validator;
+// use Validator\Validator;
 // use WP_CLI;
 
 // Validator::getInstance()->require([]);
@@ -14,6 +14,7 @@ use Validator\Validator;
 // $project_root = str_replace( " " , "\ " , PROJECT_ROOT);
 
 WP_CLI::log("test");
+
 // WP_CLI::line("test");
 
 // WP_CLI::line($project_root . "\n");
