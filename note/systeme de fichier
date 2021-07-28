@@ -1,0 +1,20 @@
+
+// https://www.php.net/manual/fr/ref.filesystem.php
+
+
+
+// if(($array = scandir(getcwd()."/fichiers")) !== false)
+//  {
+//  foreach($array as $key => $content)
+//   {
+//   if($content != "." && $content != ".." && preg_match("`.html?$`", $content) == 1)
+//    {
+//    $newname = preg_replace("`.html?$`", ".php", $content);
+//    rename(getcwd()."/fichiers/".$content, getcwd()."/fichiers/".$newname);
+//    print($content." a ete renomme : le nom du fichier est maintenant ".$newname."n");
+//    }
+//   }
+//  }
+
+
+

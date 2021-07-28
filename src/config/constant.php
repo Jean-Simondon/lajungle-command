@@ -6,38 +6,40 @@
  * et ce de manière à prendre en compte les ajouts au projet que l'exécution des différents script aurait pû réaliser.
  */
 
+ print_r(get_defined_constants(true)["user"]);die();
+
 if( !defined("DS")) {
     define( "DS", DIRECTORY_SEPARATOR);
 }
 
 // Chemin vers la racine de ljd-cli.phar
 if( !defined("LJD_CLI_ROOT") ) {
-    define( "LJD_CLI_ROOT", dirname( __DIR__ ) );
+    define( "LJD_CLI_ROOT", WP_CLI_PHAR_PATH );
 }
 
 // Chemin vers les vendors de ljd-cli.phar
 if( !defined("VENDOR_DIR") ) {
-    define( "VENDOR_DIR", LJD_CLI_ROOT . '/vendor' );
+    define( "VENDOR_DIR", LJD_CLI_ROOT . '/../vendor' );
 }
 
 // Chemin ver le répertoire de l'outil Validator de ljd-cli.phar
 if( !defined("VALIDATOR_DIR") ) {
-    define( "VALIDATOR_DIR", LJD_CLI_ROOT . '/validator' );
+    define( "VALIDATOR_DIR", LJD_CLI_ROOT . '/src/validator' );
 }
 
 // Chemin vers le répertoire de config de ljd-cli.phar
 if( !defined("CONFIG_DIR") ) {
-    define( "CONFIG_DIR", LJD_CLI_ROOT . '/config' );
+    define( "CONFIG_DIR", LJD_CLI_ROOT . '/src/config' );
 }
 
 // Chemin vers le répétoire de l'outil Menu de ljd-cli.phar
 if( !defined("MENU_DIR") ) {
-    define( "MENU_DIR", LJD_CLI_ROOT . '/menu' );
+    define( "MENU_DIR", LJD_CLI_ROOT . '/src/menu' );
 }
 
 // Chemin vers le répertoire des scripts de ljd-cli.phar
 if( !defined("SCRIPT_DIR") ) {
-    define( "SCRIPT_DIR", LJD_CLI_ROOT . '/script' );
+    define( "SCRIPT_DIR", LJD_CLI_ROOT . '/src/script' );
 }
 
 // Chemin (commençant par phar://) vers la racine du projet (le répertoire dans lequel se trouve ljd-cli.phar)
@@ -47,7 +49,7 @@ if( !defined("PROJECT_ROOT_WITH_PHAR") ) {
 
 // Chemin (sans phar://) vers la racine du projet (le répertoire dans lequel se trouve ljd-cli.phar)
 if( !defined("PROJECT_ROOT") ) {
-    define( "PROJECT_ROOT", str_replace( "phar://", "", PROJECT_ROOT_WITH_PHAR ) );
+    define( "PROJECT_ROOT", str_replace( "phar://", "", WP_CLI_PHAR_PATH ) );
 }
 
 /* Define STDIN in case if it is not already defined by PHP for some reason */
@@ -120,3 +122,41 @@ if( file_exists( PROJECT_ROOT . '/config-for-ljd-cli.ini') ) {
 
 // Débug :
 // print_r(get_defined_constants(true)["user"]);die();
+
+
+// constante utile quand wp-cli :
+/**
+ *  EXEMPLE AVEC LE PROJET TANDEM
+ * 
+ * [WP_CLI_PHAR_PATH] => /Users/mbpdejean/workspace/tandem
+ * [ABSPATH] => /Users/mbpdejean/workspace/tandem/htdocs/cms/
+ * [DB_NAME] => tandem
+ * [DB_USER] => root
+ * [DB_PASSWORD] => root
+ * [DB_HOST] => localhost
+ * [WP_HOME] => https://tandem.lan
+ * [WP_SITEURL] => https://tandem.lan/cms
+ * THEMOSIS_STORAGE
+ * [CONTENT_DIR] => content
+ * [WP_CONTENT_DIR] => /Users/mbpdejean/workspace/tandem/htdocs/content
+ * [WP_CONTENT_URL] => https://tandem.lan/content
+ * [WP_LANG_DIR] => /Users/mbpdejean/workspace/tandem/htdocs/content/languages
+ * [LANGDIR] => wp-content/languages
+ * [WP_PLUGIN_DIR] => /Users/mbpdejean/workspace/tandem/htdocs/content/plugins
+ * [WP_PLUGIN_URL] => https://tandem.lan/content/plugins
+ * [PLUGINDIR] => wp-content/plugins
+ * 
+ * [SITECOOKIEPATH] => /cms/
+ * [ADMIN_COOKIE_PATH] => /cms/wp-admin
+ * [PLUGINS_COOKIE_PATH] => /content/plugins
+ * 
+ * [LJD_CLI_ROOT] => /Users/mbpdejean/.wp-cli/packages/vendor/jean-simondon/lajungle-command
+ * [VENDOR_DIR] => /Users/mbpdejean/.wp-cli/packages/vendor/jean-simondon/lajungle-command/vendor
+ * [VALIDATOR_DIR] => /Users/mbpdejean/.wp-cli/packages/vendor/jean-simondon/lajungle-command/validator
+ * [CONFIG_DIR] => /Users/mbpdejean/.wp-cli/packages/vendor/jean-simondon/lajungle-command/config
+ * [MENU_DIR] => /Users/mbpdejean/.wp-cli/packages/vendor/jean-simondon/lajungle-command/menu
+ * [SCRIPT_DIR] => /Users/mbpdejean/.wp-cli/packages/vendor/jean-simondon/lajungle-command/script
+ * [PROJECT_ROOT_WITH_PHAR] => /Users/mbpdejean/.wp-cli/packages/vendor/jean-simondon
+ * [PROJECT_ROOT] => /Users/mbpdejean/.wp-cli/packages/vendor/jean-simondon
+ * 
+ */

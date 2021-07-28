@@ -1,0 +1,22 @@
+# A faire :
+
+    -- actualiser les constantes après chaque script
+
+On dispose d'une archive phar, comme un composer.phar, qui lorsqu'elle est exécuté, ouvre le menu que l'on voit en screenshot.
+On peut écrire des scripts plus facilement, complètement en PHP, et les ajouter facilement en tant qu'option d'un sous menu
+À partir de ce menu il est possible de naviguer des menus et des sous-menus jusqu'à atteindre des "options" qui elle-même déclenche le lancement de script
+De ce que j'ai trouvé utile d'intégrer comme option, la liste est longue :
+
+-- Raccourcis vers les commandes Wp-cli (plus besoin d'explorer la doc, et ça démocratise son usage, donc moins de passage par l'admin et dév plus rapide )
+-- Créer du contenu sans passer par l'admin ( et peut-être même générer automatiquement du contenu afin de faire gagner du temps aux dev)
+-- Commande propre au projet ( gulp, bower install, composer update, npm install etc...)
+-- Installation de projet Iquitos ou Loreto
+-- Import de code tel des Helpers ou Feature sauvegardé sur Bitbucket
+-- Suggestion de plugin à télécharger et require simplifié
+-- Différente commande composer dont ont a pas conscience tant que l'on a solidement épluché la doc composer
+-- Création de fichier ( tel des CPT, des models, controller et autre)
+-- L'intégration de test unitaire, autant qu'un script qui aiderait à faire le diagnostic des projets,
+-- Ou encore l'automatisation de la surveillance afin de voir s'il n'y a pas de fichier vérolé.
+
+Le tout rend énormément d'outils, de commande et script plus accessible, et je dois en oublier.
+En tout cas, cet outils peut-être le support d'un très grand nombre d'option qui aide à développer dans de meilleurs conditions

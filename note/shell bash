@@ -1,0 +1,2 @@
+
+sed -i "s;$SEARCH;$REPLACE;" $FILEPATH
