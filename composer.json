@@ -1,5 +1,5 @@
 {
-    "name": "jean-simondon/lajungle-command",
+    "name": "Jean-Simondon/lajungle-command",
     "description": "package de commande wp-cli pour les projets de la jungle design",
     "type": "wp-cli-package",
     "keyworkds": [
