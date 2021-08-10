@@ -1,0 +1,14 @@
+{
+  "name": "YOUR_THEME_NAME",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+
+    "jssocials": "^1.5.0"
+
+  }
+}

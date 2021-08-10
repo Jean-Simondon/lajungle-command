@@ -1,0 +1,83 @@
+{
+  "name": "themosis/themosis",
+  "description": "The Themosis framework. A WordPress framework.",
+  "keywords": ["themosis", "framework", "WordPress"],
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Julien Lambé",
+      "email": "julien@themosis.com",
+      "homepage": "http://www.themosis.com/"
+    }
+  ],
+  "type": "project",
+  "repositories":[
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "composer",
+      "url": "https://composer.lajungle.net"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      "Thms": "library"
+    }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "platform": {
+      "php": "7.3"
+    }
+  },
+  "require": {
+    "php": ">=7.3",
+
+    "johnpbloch/wordpress-core-installer": "2.0.0",
+    "johnpbloch/wordpress-core": "5.8",
+
+    "themosis/framework": "1.3.3",
+    "themosis/theme": "1.3.2",
+
+    "vlucas/phpdotenv": "2.6.7",
+    "filp/whoops": "2.12.0",
+    "illuminate/database": "5.8.36",
+    "monolog/monolog": "1.26.0",
+    "mobiledetect/mobiledetectlib": "2.8.0",
+
+    "lajungle/acf-pro": "5.9.6",
+    "lajungle/gravityforms": "2.5.7",
+    "lajungle/ignition": "1.1.1",
+    "lajungle/iquitheme": "1.1.3",
+    "lajungle/iquitos": "1.1.0",
+    "lajungle/ljd-mu-plugins": "1.2.7",
+    "lajungle/webtoffee-gdpr-cookie-consent": "2.3.4",
+    "lajungle/wp-media-folder": "5.3.17",
+    "lajungle/wp-rocket": "3.8.8",
+    "lajungle/polylang-pro": "3.0.4",
+    
+    "wpackagist-plugin/acf-gravityforms-add-on": "1.2.8",
+    "wpackagist-plugin/wordpress-seo": "16.8",
+    "wpackagist-plugin/crop-thumbnails": "1.3.1",
+    "wpackagist-plugin/regenerate-thumbnails": "3.1.5",
+    "wpackagist-plugin/post-type-archive-links": "1.3.1",
+    "wpackagist-plugin/tablepress":"1.13",
+    "wpackagist-plugin/advanced-access-manager": "6.7.5",
+
+    "wordplate/acf": "11.0.1"
+  },
+  "extra":{
+    "installer-paths":{
+      "htdocs/content/mu-plugins/themosis-{$name}/": ["themosis/framework"],
+      "htdocs/content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "htdocs/content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "htdocs/content/themes/themosis-{$name}/": ["themosis/theme"],
+      "htdocs/content/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": {
+      "johnpbloch/wordpress-core": "htdocs/cms"
+    }
+  }
+}

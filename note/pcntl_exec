@@ -1,0 +1,24 @@
+
+https://www.php.net/manual/fr/function.pcntl-exec.php
+
+https://stackoverflow.com/questions/14508871/php-run-another-script-in-foreground
+
+pcntl_exec("command", array("parameter1", "parameter2"));
+For example, I have a script that starts the mysql command using the parameters in the current php project that looks like:
+
+pcntl_exec("/usr/bin/mysql", array(
+    "--user=".$params['user'],
+    "--password=".$params['password'],
+    "--host=".$params['host'],
+    $params['dbname']
+));
+
+You do need to know the full path of the command, which is a pain because it can vary by platform, but you can use the env command command which is available at /usr/bin/env on most systems to find the command for you. The above example above becomes:
+
+pcntl_exec("/usr/bin/env", array(
+    "mysql",
+    "--user=".$params['user'],
+    "--password=".$params['password'],
+    "--host=".$params['host'],
+    $params['dbname']
+));

@@ -1,0 +1,29 @@
+{
+    "name": "jean-simondon/lajungle-command",
+    "description": "package de commande wp-cli pour les projets de la jungle design",
+    "type": "wp-cli-package",
+    "keyworkds": [
+        "La Jungle Design",
+        "Wordpress",
+        "cli"
+    ],
+    "authors": [
+        {
+            "name": "Jean Simondon",
+            "email": "jsimondon@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "licence": "MIT",
+    "autoload": {
+        "files": [ "lajungle-command.php" ]
+    },
+    "require": {
+        "php-school/cli-menu": "dev-master"
+    },
+    "extras": {
+        "commands": [
+            "run_forest"
+        ]
+    }
+}

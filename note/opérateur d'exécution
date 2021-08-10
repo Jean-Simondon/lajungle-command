@@ -1,0 +1,7 @@
+https://www.php.net/manual/fr/language.operators.execution.php
+
+
+$test = `pwd`;
+echo $test;
+
+die();

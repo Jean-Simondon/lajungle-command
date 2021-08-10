@@ -1,0 +1,12 @@
+.page-template-contact {
+
+    .hr-bottom {
+        padding-bottom: $section-head-gap;
+    }
+    
+    .gform_wrapper {
+        padding-bottom: $section-head-gap;
+        margin-bottom: $section-head-gap;
+        @include border(0 0 9px, $grey);
+    }
+}

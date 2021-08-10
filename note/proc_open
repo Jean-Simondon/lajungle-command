@@ -1,0 +1,64 @@
+https://www.php.net/manual/en/function.proc-open.php
+
+proc_open — Exécute une commande et ouvre les pointeurs de fichiers pour les entrées / sorties
+
+// PROC_OPEN()
+
+// $descriptorspec = [STDIN, STDOUT, STDOUT];
+// $cmd =  "ls";
+// $proc = proc_open($cmd, $descriptorspec, $pipes);
+// proc_close($proc);
+                
+// proc_open("ls", $descriptorspec, $pipes);
+
+
+
+
+Similaire à popen mais fournit un plus grande degré de controler sur l'"exécution du programme
+
+                // https://www.php.net/manual/en/function.proc-open.php
+
+
+// PROC_OPEN()
+
+// $descriptorspec = [STDIN, STDOUT, STDOUT];
+// $cmd =  "ls";
+// $proc = proc_open($cmd, $descriptorspec, $pipes);
+// proc_close($proc);
+                
+// proc_open("ls", $descriptorspec, $pipes);
+
+
+
+https://stackoverflow.com/questions/1679045/php-exec-command-how-to-specify-working-directory
+
+
+For greater control over how the child process will be executed, you can use the proc_open() function:
+
+$cmd  = 'Scripts/script.sh';
+$cwd  = 'Scripts';
+
+$spec = array(
+    // can something more portable be passed here instead of /dev/null?
+    0 => array('file', '/dev/null', 'r'),
+    1 => array('file', '/dev/null', 'w'),
+    2 => array('file', '/dev/null', 'w'),
+);
+
+$ph = proc_open($cmd, $spec, $pipes, $cwd);
+if ($ph === FALSE) {
+    // open error
+}
+
+// If we are not passing /dev/null like above, we should close
+// our ends of any pipes to signal that we're done. Otherwise
+// the call to proc_close below may block indefinitely.
+foreach ($pipes as $pipe) {
+    @fclose($pipe);
+}
+
+// will wait for the process to terminate
+$exit_code = proc_close($ph);
+if ($exit_code !== 0) {
+    // child error
+}
