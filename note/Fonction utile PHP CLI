@@ -1,0 +1,276 @@
+
+
+ACCES INTERNET :
+
+    //  cURL https://www.php.net/manual/fr/ref.curl.php
+
+CHANGER DE REPERTOIRE DE TRAVAIL
+
+    https://www.php.net/manual/en/function.chdir.php
+
+
+SYSTEME DE FICHIER 
+
+    https://www.php.net/manual/fr/refs.fileprocess.file.php
+
+    https://www.php.net/manual/fr/book.filesystem.php
+
+    https://www.php.net/manual/fr/book.fileinfo.php
+
+    https://www.php.net/manual/fr/book.dir.php
+
+    Employer les constance STDIN, STDOUT, STDERR
+    À employer avec fgets, fputs, fopen
+
+    // https://www.php.net/manual/fr/ref.filesystem.php
+
+    // if(($array = scandir(getcwd()."/fichiers")) !== false)
+    //  {
+    //  foreach($array as $key => $content)
+    //   {
+    //   if($content != "." && $content != ".." && preg_match("`.html?$`", $content) == 1)
+    //    {
+    //    $newname = preg_replace("`.html?$`", ".php", $content);
+    //    rename(getcwd()."/fichiers/".$content, getcwd()."/fichiers/".$newname);
+    //    print($content." a ete renomme : le nom du fichier est maintenant ".$newname."n");
+    //    }
+    //   }
+    //  }
+
+LECTURE DE FICHIER :
+
+    // while (!feof($proc))
+    // {
+    //     echo fread($proc, 4096);
+    //     @ flush();
+    // }
+
+WEB SERVICE 
+
+    https://www.php.net/manual/fr/refs.webservice.php
+
+FREAD :
+
+    https://www.php.net/fread
+
+OPERATEUR D'EXECUTION :
+
+    https://www.php.net/manual/fr/language.operators.execution.php
+    $test = `pwd`;
+    echo $test;
+
+PASSTHRU
+
+    https://www.php.net/manual/fr/function.passthru.php
+
+PCNTL_EXEC
+
+    https://www.php.net/manual/fr/function.pcntl-exec.php
+
+    https://stackoverflow.com/questions/14508871/php-run-another-script-in-foreground
+
+    pcntl_exec("command", array("parameter1", "parameter2"));
+    For example, I have a script that starts the mysql command using the parameters in the current php project that looks like:
+
+    pcntl_exec("/usr/bin/mysql", array(
+        "--user=".$params['user'],
+        "--password=".$params['password'],
+        "--host=".$params['host'],
+        $params['dbname']
+    ));
+
+    You do need to know the full path of the command, which is a pain because it can vary by platform, but you can use the env command command which is available at /usr/bin/env on most systems to find the command for you. The above example above becomes:
+
+    pcntl_exec("/usr/bin/env", array(
+        "mysql",
+        "--user=".$params['user'],
+        "--password=".$params['password'],
+        "--host=".$params['host'],
+        $params['dbname']
+    ));
+
+COMPILER EN PHAR
+
+    https://www.mon-code.net/article/74/Packager-son-code-dans-une-archive-PHP:-PHAR
+
+    https://odan.github.io/2017/08/16/create-a-php-phar-file.html
+
+    https://blog.programster.org/creating-phar-files
+
+    https://programadorphp.es/docs/php_manual_espanol/ref.phar.html
+
+    https://medium.com/@tfidry/create-and-deploy-secure-phars-c5572f10b4dd
+
+
+    WP CLI .phar
+    https://wp-cli.org/fr/
+    https://github.com/wp-cli/wp-cli/tree/master/php
+
+
+    Phar : extension de php pour mettre une apli PHP complète dans un fichier unique apellé "phar" ( PHP Archive)
+    -- fournit une classe d'abstraction de format de fichier pour créer et manipuler des fichiers tar et zipà travers la classe PharData
+        https://www.php.net/manual/fr/class.phardata.php
+    -- convertir des fichiers tar, zip et phar avec une simple ligne de code (Phar::convertToExecutable())
+        https://www.php.net/manual/fr/phar.converttoexecutable.php
+    -- Grouper plusieurs fichiers en un seul pour founir toute une appli sans l'extraire sur le disque
+    -- peuvent être exécutés par PHP comme n'importe quel fichier, en ligne de que commande autant que via un serveur web
+    -- Utilise un flux  https://www.php.net/manual/fr/book.stream.php au lieu de include
+                        https://www.php.net/manual/fr/phar.using.stream.php
+
+    comnent créer des .phar 
+        https://www.php.net/manual/fr/phar.creating.intro.php
+
+
+PHP CLI ARGS
+
+    parser une commande dans $_GET
+    parse_str(implode('&', array_slice($argv, 1)), $_GET);
+
+    $ php -f somefile.php a=1 b[]=2 b[]=3
+    This will set $_GET['a'] to '1' and $_GET['b'] to array('2', '3').
+
+    Even better, instead of putting that line in every file, take advantage of PHP's auto_prepend_file directive.  Put that line in its own file and set the auto_prepend_file directive in your cli-specific php.ini like so:
+
+    auto_prepend_file = "/etc/php/cli-php5.3/local.prepend.php"
+
+    It will be automatically prepended to any PHP file run from the command line.
+
+    Lecture d'un fichier :  cat test.php | php -r "print htmlentities(file_get_contents('php://stdin'));"
+
+    ???
+    #!/usr/bin/php -q /* -*- c -*- */
+
+POPEN
+
+    To read the output of a process, popen() is the way to go. Your script will run in parallel with
+    the program and you can interact with it by reading and writing it's output/input as if it was a file.
+
+
+    If you want to display the output at run time as the program goes, you can do this:
+
+    while (@ ob_end_flush()); // end all output buffers if any
+
+    $proc = popen($cmd, 'r');
+    echo '<pre>';
+    while (!feof($proc))
+    {
+        echo fread($proc, 4096);
+        @ flush();
+    }
+    echo '</pre>';
+
+    This code should run the command and push the output straight to the end user at run time.
+
+
+
+    This will execute $cmd in the background (no cmd window) without PHP waiting for it to finish, on both Windows and Unix.
+
+    <?php
+    function execInBackground($cmd) {
+        if (substr(php_uname(), 0, 7) == "Windows"){
+            pclose(popen("start /B ". $cmd, "r")); 
+        }
+        else {
+            exec($cmd . " > /dev/null &");  
+        }
+    }
+    ?>
+
+PROC_OPEN
+
+https://www.php.net/manual/en/function.proc-open.php
+
+proc_open — Exécute une commande et ouvre les pointeurs de fichiers pour les entrées / sorties
+
+// PROC_OPEN()
+
+// $descriptorspec = [STDIN, STDOUT, STDOUT];
+// $cmd =  "ls";
+// $proc = proc_open($cmd, $descriptorspec, $pipes);
+// proc_close($proc);
+                
+// proc_open("ls", $descriptorspec, $pipes);
+
+
+
+
+Similaire à popen mais fournit un plus grande degré de controler sur l'"exécution du programme
+
+                // https://www.php.net/manual/en/function.proc-open.php
+
+
+// PROC_OPEN()
+
+    // $descriptorspec = [STDIN, STDOUT, STDOUT];
+    // $cmd =  "ls";
+    // $proc = proc_open($cmd, $descriptorspec, $pipes);
+    // proc_close($proc);
+                    
+    // proc_open("ls", $descriptorspec, $pipes);
+
+    https://stackoverflow.com/questions/1679045/php-exec-command-how-to-specify-working-directory
+
+    For greater control over how the child process will be executed, you can use the proc_open() function:
+
+    $cmd  = 'Scripts/script.sh';
+    $cwd  = 'Scripts';
+
+    $spec = array(
+        // can something more portable be passed here instead of /dev/null?
+        0 => array('file', '/dev/null', 'r'),
+        1 => array('file', '/dev/null', 'w'),
+        2 => array('file', '/dev/null', 'w'),
+    );
+
+    $ph = proc_open($cmd, $spec, $pipes, $cwd);
+    if ($ph === FALSE) {
+        // open error
+    }
+
+    // If we are not passing /dev/null like above, we should close
+    // our ends of any pipes to signal that we're done. Otherwise
+    // the call to proc_close below may block indefinitely.
+    foreach ($pipes as $pipe) {
+        @fclose($pipe);
+    }
+
+    // will wait for the process to terminate
+    $exit_code = proc_close($ph);
+    if ($exit_code !== 0) {
+        // child error
+    }
+
+PTHREAD
+
+    https://qastack.fr/programming/70855/how-can-one-use-multi-threading-in-php-applications
+
+READLINE
+
+    https://www.php.net/manual/fr/function.readline.php
+
+    // readline_callback_handler_install($line, function() {
+    // 	echo "test de handler install";
+    // });
+
+    <?php
+    // Lit 3 commandes de l'utilisateur
+    for ($i=0; $i < 3; $i++) {
+            $line = readline("Commande : ");
+            readline_add_history($line);
+    }
+
+    // Liste l'historique
+    print_r(readline_list_history());
+
+    // Liste les variables
+    print_r(readline_info());
+    ?>
+
+SHELL_EXEC 
+
+    https://www.php.net/manual/fr/function.shell-exec.php
+
+
+
+
+

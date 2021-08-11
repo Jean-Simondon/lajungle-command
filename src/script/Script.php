@@ -42,7 +42,7 @@ class Script
             }
         } else {
         $this->closeScript(/* cancel l'attribut dismiss s'il est à true */);
-            $this->waitForInput("\nAucun script n'a encore été écrit pour cette option, appuyez sur une touche pour revenir au menu");
+            $this->waitForInput("\nLe fichier de scrip n'a pas été trouvé");
         }
     }
 
@@ -67,6 +67,7 @@ class Script
         // } while ($line == '');
         // fclose($handle);
         // $this->args[$key] = trim($line);
+        print_r("ici ça passe");
 
         return $this;
     }
@@ -186,8 +187,11 @@ class Script
     public function shell_exec($cmd, $verbose = true)
     {
         if ($this->dismiss()) return $this;
+        print_r("ici aussi");
         if( $verbose ) $this->display("cmd lancée => [ " . $cmd . " ]");
+        print_r("et là");
         $output = shell_exec($cmd);
+        print_r("encore");
         $this->display($output);
         return $this;
     }

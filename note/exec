@@ -1,7 +1,0 @@
-
-Can’t get the output from your exec’d command to appear in the $output array?
-Is it echo’ing all over your shell instead?
-Append "2>&1" to the end of your command, for example:
-exec("xmllint --noout ~/desktop/test.xml 2>&1", $retArr, $retVal);
-Will fill the array $retArr with the expected output; one line per array key.
-

@@ -6,8 +6,6 @@ https://getcomposer.org/schema.json
 
 https://getcomposer.org/doc/04-schema.md
 
-composer diagnose
 
 
-composer exec --list
-composer exec php unit
+https://getcomposer.org/doc/

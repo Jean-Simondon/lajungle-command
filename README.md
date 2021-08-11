@@ -27,7 +27,7 @@ Le tout est à ajouter à wp-cli comme dépendance afin de pouvoir l'utilitaire 
 
 #### installer en tant que package dans wp-cli.phar
 
-    php wp-cli.phar package install jean-simondon/lajungle-command
+    php wp-cli.phar package install Jean-Simondon/lajungle-command
 
 ### lancer la commande une fois le package installer dans wp-cli.phar 
 
