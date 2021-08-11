@@ -21,8 +21,10 @@ $this->display("Ajout de dépendance")
             '3' => 'outdated',
             '4' => 'diagnose',
             '5' => '--list l',
-            '6' => 'exec --list',
-            '7' => 'exec php unit',
+            '6' => 'validate',
+            '7' => 'diagnose',
+            // '8' => 'exec --list',
+            // '9' => 'exec php unit',
         ],
         "CMD"
     );
