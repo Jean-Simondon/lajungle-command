@@ -18,11 +18,11 @@ class CptExample extends CptManager
         $this->_plural_name     = __('Examples', THEME_TEXTDOMAIN);
         $this->_singular_name   =  __('Example', THEME_TEXTDOMAIN);
         $this->_menu_icon       = 'dashicons-buddicons-groups';
-        $this->_is_female       = true;
+        // $this->_is_female       = true;
         $this->_mOptionsPage    = ['Page des examples'];
-        $this->_linkedTaxoClasses = [
-            'YOUR_THEME_NAME\\Features\\taxo\\TaxoExample'
-        ];
+        // $this->_linkedTaxoClasses = [
+        //     'YOUR_THEME_NAME\\Features\\taxo\\TaxoExample'
+        // ];
 
         parent::__construct();
     }

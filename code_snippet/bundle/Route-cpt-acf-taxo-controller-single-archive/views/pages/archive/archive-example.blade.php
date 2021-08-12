@@ -17,14 +17,14 @@
             <button class="js-validator-keyword">Rechercher</button>
 
             {{-- Filtre sur les example --}}
-            @if( isset($example_filter) && VarHelper::goodArray($example_filter) )
+            {{-- @if( isset($example_filter) && VarHelper::goodArray($example_filter) )
                 <select class="js-example-filter" name="example-selector">
                     <option class="active" value="all">Tous les Example</option>
                     @foreach ($example_filter as $example)
                         <option value="{{ $example->slug }}">{{ $example->name }}</option>
                     @endforeach
                 </select>
-            @endif
+            @endif --}}
 
         </div>
 

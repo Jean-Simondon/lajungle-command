@@ -4,10 +4,10 @@ namespace YOUR_THEME_NAME\Controllers;
 
 use Iquitheme\Core\Controllers\BaseClassicalPagecontroller;
 use YOUR_THEME_NAME\Features\cpt\CptExample;
-use YOUR_THEME_NAME\Features\taxo\TaxoExample;
 use YOUR_THEME_NAME\Helpers\PostHelper;
-use YOUR_THEME_NAME\Helpers\VarHelper;
-use YOUR_THEME_NAME\Helpers\CptHelper;
+// use YOUR_THEME_NAME\Features\taxo\TaxoExample;
+// use YOUR_THEME_NAME\Helpers\VarHelper;
+// use YOUR_THEME_NAME\Helpers\CptHelper;
 use YOUR_THEME_NAME\Models\ExampleModel;
 use \WP_Query;
 
@@ -18,7 +18,7 @@ class ExampleController extends BaseClassicalPagecontroller
     {
         $container = \container();
         $exampleSlug = $container[CtpExample::class]->getSlug();
-        $taxoExampleSlug = $container[TaxoExample::class]->getSlug();
+        // $taxoExampleSlug = $container[TaxoExample::class]->getSlug();
 
         // Données pour la zone de rebond
         $examples = get_posts([
@@ -43,7 +43,7 @@ class ExampleController extends BaseClassicalPagecontroller
     {
         $container = \container();
         $exampleSlug = $container[CtpExample::class]->getSlug();
-        $taxoExampleSlug = $container[TaxoExample::class]->getSlug();
+        // $taxoExampleSlug = $container[TaxoExample::class]->getSlug();
 
         $paged = intval(get_query_var('paged'));
         if ($paged < 1) {
@@ -65,7 +65,7 @@ class ExampleController extends BaseClassicalPagecontroller
         // CptHelper::processExample($examples);
 
         // Récupération du filtre par taxo
-        $example_filter = get_terms($taxoExampleSlug);
+        // $example_filter = get_terms($taxoExampleSlug);
 
         // Pagination
         $pagination = PostHelper::getPagination([
@@ -75,7 +75,7 @@ class ExampleController extends BaseClassicalPagecontroller
 
         return View('pages.archive.archive-example', [
             'examples' => $examples->posts,
-            'example_filter' => $example_filter,
+            // 'example_filter' => $example_filter,
             'pagination' => $pagination,
             'ppp' => $ppp,
         ]);

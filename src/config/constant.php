@@ -6,10 +6,23 @@
  * et ce de manière à prendre en compte les ajouts au projet que l'exécution des différents script aurait pû réaliser.
  */
 
+//===========================================================================
+//===========================================================================
+//      GENERAL
+//===========================================================================
+//===========================================================================
+
 // Le séparateur du système de fichier
 if( !defined("DS") ) {
     define( "DS", DIRECTORY_SEPARATOR );
 }
+
+
+//===========================================================================
+//===========================================================================
+//      A PROPOS DU PACKAGE DE COMMAND
+//===========================================================================
+//===========================================================================
 
 // Chemin vers la racine de lajungle-command
 if( !defined("LJD_CMD_ROOT") ) {
@@ -71,6 +84,20 @@ if( !defined("STDOUT") ) {
 if( !defined("STDERR") ) {
     define("STDERR", fopen('php://stderr', 'w'));
 }
+
+//===========================================================================
+//===========================================================================
+//      A PROPOS DU PROJET
+//===========================================================================
+//===========================================================================
+
+if( !defined("THEME_NAME") ) {
+    define( "THEME_NAME", basename(STYLESHEETPATH) );
+}
+
+// if( !defined("THEME_NAME_CAMEL") ) {
+//     define( "THEME_NAME", basename(STYLESHEETPATH) );
+// }
 
 // Congiguration supplémentaire si fichier de configuration créer et renseigné
 if( defined("LJD_PROJECT_ROOT") && file_exists( LJD_PROJECT_ROOT . '/config-for-ljd-cli.ini') ) {
