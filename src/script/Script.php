@@ -3,7 +3,6 @@
 namespace Scripts;
 
 use Exception;
-use WP_CLI;
 
 class Script
 {
@@ -18,7 +17,7 @@ class Script
     private $dismissAll = false;
 
     /**
-     * Nom du script à lancer
+     * chemin et nom du script à lancer
      */
     private $script_name;
 
@@ -56,29 +55,14 @@ class Script
     public function askInputText($key)
     {
         if ($this->dismiss()) return $this;
-
         $this->args[$key] = trim( fgets( STDIN ) );
-
-        // $this->display($this->args[$key]);
-
-        // $handle = fopen("php://stdin", "r");
-        // do {
-        //     $line = trim(fgets($handle));
-        // } while ($line == '');
-        // fclose($handle);
-        // $this->args[$key] = trim($line);
-
         return $this;
     }
 
     public function askInputYesOrNo($key)
     {
         if ($this->dismiss()) return $this;
-
-        // $handle = fopen("php://stdin", "r");
-
         do {
-            // $line = trim(fgets($handle));
             $line = trim( fgets( STDIN ) );
         } while (!in_array($line, ['y', 'Y', 'n', 'N', 'o', 'O']));
 
@@ -93,12 +77,9 @@ class Script
     public function askInputKeyInArray( $question, $key_value, $storage)
     {
         if ($this->dismiss()) return $this;
-
-        // $handle = fopen("php://stdin", "r");
         do {
             $this->display($question);
             $this->displayArray($key_value);
-            // $line = trim(fgets($handle));
             $line = trim( fgets( STDIN ) );
         } while (!array_key_exists($line, $key_value));
 
@@ -107,22 +88,6 @@ class Script
         }
 
         return $this;
-    }
-
-    // public function askInputPassword($key)
-    // {
-    //     if ($this->dismiss()) return $this;
-    //     return $this;
-    // }
-
-    /**
-     * Appelé en début de fonction, vérifie que l'appel de cette fonction doit être réalisé ou non
-     * Utile pour les if / else et créer des conditions
-     * Utile aussi pour filer à la fin du script et terminer en cas d'exit
-     */
-    public function dismiss()
-    {
-        return $this->dismissAll;
     }
 
     public function display($text, $variable = null)
@@ -209,11 +174,6 @@ class Script
         return $this;
     }
 
-    public function get($var_name)
-    {
-        return $this->args[$var_name];
-    }
-
     public function waitForInput($message = "")
     {
         if ($this->dismiss()) return $this;
@@ -223,18 +183,25 @@ class Script
         } else {
             $this->display("Appuyer sur une touche pour continuer");
         }
-
-        // $handle = fopen("php://stdin", "r");
-        // $line = trim(fgets($handle));
         $line = trim( fgets( STDIN ) );
         unset($line);
         return $this;
+    }
+
+    public function get($var_name)
+    {
+        return $this->args[$var_name];
     }
 
     public function set($key, $value)
     {
         $this->args[$key] = $value;
         return $this;
+    }
+
+    public function dismiss()
+    {
+        return $this->dismissAll;
     }
 
     public function closeScript()
@@ -244,34 +211,3 @@ class Script
     }
 
 }
-
-
-
-/**
- * Idée :
- * 
- * display command and run
- * 
- * 
- */
-
-
-
-    // ->runShellCommandAndDisplayResult("ls -a")
-    // ->runAndDisplayShellCommand("ls -a")
-    // ->runAndDisplayShellCommand("ls -a")
-    // ->askInputYesOrNo("ma question", "storage_data")
-    // ->askInputContinue("voulez-vous continuer ?")
-    // ->askInputEmail()
-    // ->askInputNumber()
-    // ->if()
-    // ->then()
-    // ->elseif()
-    // ->else()
-    // ->endif()
-    // ->findFile()
-    // ->validateSoft("WGET")
-    // ->validateSoft("TAR")
-    // ->validateSoft("Git")
-    // ->displayText("")
-    // ->endScript();

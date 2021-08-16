@@ -6,11 +6,6 @@ use Validator\Validator;
 
 // Validator::getInstance()->require([]);
 
-/**
- * Créer un fichier de config et faire itérer dessus
- * pour toutes les constantes à créer
- */
-
 $this->display("Ajout de dépendance")
 
     ->askInputKeyInArray(

@@ -1,10 +1,8 @@
 <?php
 
-namespace Scripts;
-
 use Validator\Validator;
 
-Validator::getInstance()->require([]);
+// Validator::getInstance()->require([]);
 
 /**
  * Créer un fichier de config et faire itérer dessus
@@ -30,7 +28,5 @@ $this->display("Ajout de dépendance")
     );
 
 if( $this->get("CMD") !== "EXIT" ) {
-
     $this->shell_exec("cd " . LJD_PROJECT_ROOT . "/ && composer " . $this->get("CMD"));
-
 }
