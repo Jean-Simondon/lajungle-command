@@ -1,8 +1,6 @@
 <?php
 
-namespace Scripts;
-
-use Validator\Validator;
+// use Validator\Validator;
 
 // Validator::getInstance()->require([]);
 

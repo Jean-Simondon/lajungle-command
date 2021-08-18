@@ -68,15 +68,15 @@ class ExampleController extends BaseClassicalPagecontroller
         // $example_filter = get_terms($taxoExampleSlug);
 
         // Pagination
-        $pagination = PostHelper::getPagination([
-            'total'           => ceil($examples->max_num_pages),
-            'current'         => $paged,
-        ]);
+        // $pagination = PostHelper::getPagination([
+        //     'total'           => ceil($examples->max_num_pages),
+        //     'current'         => $paged,
+        // ]);
 
         return View('pages.archive.archive-example', [
             'examples' => $examples->posts,
             // 'example_filter' => $example_filter,
-            'pagination' => $pagination,
+            // 'pagination' => $pagination,
             'ppp' => $ppp,
         ]);
     }
