@@ -2,7 +2,6 @@
 
 namespace YOUR_THEME_NAME\Models;
 
-use \WP_Query;
 use YOUR_THEME_NAME\Features\Cpt\CptExample;
 use Iquitheme\Core\Models\BaseModel;
 

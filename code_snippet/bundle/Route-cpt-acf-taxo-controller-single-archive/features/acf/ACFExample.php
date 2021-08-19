@@ -6,7 +6,7 @@ use Iquitheme\Core\Features\FeatureManager;
 
 use YOUR_THEME_NAME\Features\cpt\CptExample;
 
-use YOUR_THEME_NAME\Acf\Models\ModuleExample;
+// use YOUR_THEME_NAME\Acf\Models\ModuleExample;
 
 use WordPlate\Acf\Location;
 

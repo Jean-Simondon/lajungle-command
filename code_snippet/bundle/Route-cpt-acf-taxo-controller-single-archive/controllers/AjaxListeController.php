@@ -6,10 +6,10 @@ use Iquitheme\Core\Controllers\BaseClassicalPagecontroller;
 use Iquitheme\Core\Controllers\BaseAjaxController;
 use Themosis\Foundation\Request;
 
-use YOUR_THEME_NAME\Features\cpt\CptExample;
-use YOUR_THEME_NAME\Models\ExampleModel;
-use YOUR_THEME_NAME\Features\taxo\TaxoExample;
-use YOUR_THEME_NAME\Helpers\PostHelper;
+// use YOUR_THEME_NAME\Features\cpt\CptExample;
+// use YOUR_THEME_NAME\Models\ExampleModel;
+// use YOUR_THEME_NAME\Features\taxo\TaxoExample;
+// use YOUR_THEME_NAME\Helpers\PostHelper;
 
 class AjaxListeController extends BaseClassicalPagecontroller
 {
@@ -19,7 +19,7 @@ class AjaxListeController extends BaseClassicalPagecontroller
     public function getExampleAction()
     {
         $container = \container();
-        $exampleSlug = $container[CptExaple::class]->getSlug();
+        $exampleSlug = $container[CptExample::class]->getSlug();
         $taxoExampleSlug = $container[TaxoExample::class]->getSlug();
 
         $request = Request::createFromGlobals();
@@ -39,7 +39,7 @@ class AjaxListeController extends BaseClassicalPagecontroller
          * Paramètre générale pour récupérer tous les annuaires
          */
         $params = [
-            'post_type' => $exampleSlug,
+            // 'post_type' => $exampleSlug,
             'order' => 'desc',
             'tax_query' => [],
             'posts_per_page' => $ppp,
