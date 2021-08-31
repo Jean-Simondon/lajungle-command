@@ -5,13 +5,14 @@ namespace Scripts;
 use Validator\Validator;
 
 // https://developer.wordpress.org/cli/commands/admin/
+// Documentation sur les commandes admin
 
 Validator::getInstance()->require([]);
 
-$this->display("Ajout de dépendance")
+$this->display("Outils d'administration")
 
     ->askInputKeyInArray(
-        "Quel option utiliser ?",
+        "Quelle option utiliser ?",
         [
             '1' => 'EXIT',
             '2' => 'admin',
@@ -20,11 +21,11 @@ $this->display("Ajout de dépendance")
             '5' => 'admin --prompt',
             '6' => 'admin --user=<id\|login\|email>',
         ],
-        "REQUIRE"
+        "CMD"
     );
 
-if( $this->get("REQUIRE") == "EXIT" ) {
-    $this->dismiss();
+if( $this->get("CMD") === 'EXIT' ) {
+    $this->endScript();
 }
 
-$this->shell_exec("wp " + $this->get("REQUIRE"));
+$this->shell_exec("wp " . $this->get("CMD"));

@@ -55,11 +55,11 @@ $BUNDLE_REPO = LJD_CMD_ROOT . "/code_snippet/bundle/Route-cpt-acf-taxo-controlle
 
 
 /**
-* Ajout du fichier Faetures > CPT > Cpt .... .php
+* Ajout du fichier Features > CPT > Cpt .... .php
 */
 if( file_exists( $BUNDLE_REPO . "/features/cpt/CptExample.php" ) ) {
     if( file_exists( STYLESHEETPATH . '/resources/features/cpt/Cpt' . ucfirst($this->get("SLUG")) . '.php' )) {
-        // Pour ne pas écraser le fichier s'il exisrte
+        // Pour ne pas écraser le fichier s'il existe
         $this->display("Le fichier  dans Features > Cpt existe déjà");
     } else {
         // Création du répertoire s'il n'existe pas déjà

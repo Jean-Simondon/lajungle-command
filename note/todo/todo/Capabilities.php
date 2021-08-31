@@ -32,7 +32,7 @@ if( $this->get("REQUIRE") == "cap add 'author' 'role'" ) {
         ->askInputText("AUTHOR")
         ->display("Quelle valeur pour role ?")
         ->askInputText("ROLE")
-        ->shell_exec("wp cap add '" + $this->get("AUTHOR") + "' '" + $this->get("ROLE") + "'" );
+        ->shell_exec("wp cap add '" . $this->get("AUTHOR") . "' '" . $this->get("ROLE") . "'" );
 
 }
 
@@ -41,7 +41,7 @@ if( $this->get("REQUIRE") == "cap list 'role'" ) {
 
     $this->display("Quelle valeur pour role ?")
         ->askInputText("ROLE")
-        ->shell_exec("wp cap list '" + $this->get("ROLE") + "'");
+        ->shell_exec("wp cap list '" . $this->get("ROLE") . "'");
 
 }
 

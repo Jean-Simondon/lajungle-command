@@ -41,8 +41,8 @@ if( $this->get("CMD") == "columns 'table'" ) {
 
     $this->display("Quelle nom de tables ? [ wp_posts, wp_users, wp_options... ]")
         ->askInputText("TABLE")
-        ->shell_exec("wp db columns " + $this->get("TABLE"));
+        ->shell_exec("wp db columns " . $this->get("TABLE"));
 
 } else {
-    $this->shell_exec("wp db " + $this->get("CMD"));
+    $this->shell_exec("wp db " . $this->get("CMD"));
 }

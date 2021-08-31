@@ -1,8 +1,7 @@
 <?php
 
-// use Validator\Validator;
-
-// Validator::getInstance()->require([]);
+use Validator\Validator;
+Validator::getInstance()->require([]);
 
 /**
  * Créer un fichier de config et faire itérer dessus

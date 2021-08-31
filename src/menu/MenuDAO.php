@@ -28,7 +28,7 @@ class MenuDAO
                 }
                 if ( is_file( $dirPath . DS . $fileName ) ) {
                     $config["scripts"][] = [
-                        "label" => $fileName, // nom de l'entrée dans le menu
+                        "label" => str_replace(["_", " ", ".php"], " ", $fileName), // nom de l'entrée dans le menu
                         "value" => str_replace( LJD_CMD_SCRIPT_DIR . DS , "", ( $dirPath . DS . $fileName ) ) // chemin pour lancer le script
                     ];
                 }
