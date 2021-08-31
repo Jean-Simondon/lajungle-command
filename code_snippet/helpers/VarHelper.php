@@ -2,6 +2,8 @@
 
 namespace YOUR_THEME_NAME\Helpers;
 
+use YOUR_THEME_NAME\Helpers\MediaHelper;
+
 class VarHelper
 {
 

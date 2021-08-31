@@ -4,6 +4,8 @@
 
     <div class="shell">
         
+        {{ the_title() }}
+
         {{-- Titre, Image bannière et fil d'ariane --}}
         {{-- <div class="head-banner">
             @include( 'parts.banner-page-interne', [

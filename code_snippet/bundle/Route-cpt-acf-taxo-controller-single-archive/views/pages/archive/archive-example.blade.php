@@ -32,19 +32,19 @@
         <button class="js-validator-filter">Valider</button>
 
         {{-- Liste d'example --}}
-        {{-- <div class="js-list-container">
+        <div class="js-list-container">
             @if( isset($examples) && VarHelper::goodArray($examples) )
                 @foreach ($examples as $example)
-                    @include( "elements.card-example", [ "example" => $example, "loopIndex" => $loopIndex ])
+                    @include( "elements.card-example", [ "example" => $example, "loopIndex" => $loop->index ])
                 @endforeach
             @endif
-        </div> --}}
+        </div>
 
         {{-- Répéteur de popin pour chacune --}}
         {{-- <div class="js-popin-container">
             @if( isset($examples) && VarHelper::goodArray($examples) )
                 @foreach ($examples as $example)
-                    @include("elements.popin-example", [ 'example' => $example, "loopIndex" => $loopIndex] )
+                    @include("elements.popin-example", [ 'example' => $example, "loopIndex" => $loop->index ] )
                 @endforeach
             @endif
         </div> --}}
